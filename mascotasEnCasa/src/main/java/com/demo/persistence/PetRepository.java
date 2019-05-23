@@ -40,6 +40,10 @@ public class PetRepository {
 	public Map<String, Pet> getPets() {
 		return pets;
 	}
+
+	public Pet findOnde(String petCode) {
+		return this.pets.get(petCode);
+	}
 	
 	
 

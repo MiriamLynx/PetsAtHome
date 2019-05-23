@@ -25,10 +25,13 @@
             </thead>
             <tbody>
             <tr class="result" data-th-each="pet : ${pets}">
-                <td>[[${pet.code}]]</td>
-                <td>[[${pet.name}]]</td>
-                <td>[[${pet.ownerName}]]</td>
-                <td>[[${pet.stateLabel}]]</td>
+            	<form action="/home/" th:action="@{/home/}" method="post">
+                	<td>[[${pet.code}]]</td>
+                	<td>[[${pet.name}]]</td>
+                	<td>[[${pet.ownerName}]]</td>
+                	<td>[[${pet.stateLabel}]]</td>
+                	<td><input type="hidden" th:value="${pet.code}" name="petCode"/><button type="submit" name="action" value="details">Details</button></td>
+                </form>
             </tr>
             </tbody>
         </table>
