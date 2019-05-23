@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link data-th-href="@{/css/bootstrap.min.css}" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="row">
+        <div id="title">
+            <h1>Mascotas en Casa</h1>
+        </div>
+        <table id="allBooks" class="table table-striped">
+            <thead>
+            <tr>
+                <th width="20%">Código</th>
+                <th width="20%">Nombre</th>
+                <th width="40%">Propietario</th>
+                <th width="20%">Estado</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="result" data-th-each="pet : ${pets}">
+                <td>[[${pet.code}]]</td>
+                <td>[[${pet.name}]]</td>
+                <td>[[${pet.owner.name}]]</td>
+                <td>[[${pet.state}]]</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
