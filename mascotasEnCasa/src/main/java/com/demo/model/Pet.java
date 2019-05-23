@@ -27,6 +27,17 @@ public class Pet {
 		return species;
 	}
 	
+	public String getSpeciesLabel() {
+		switch(species) {
+		case CAT:
+			return "Gato: Felis silvestris catus";
+		case DOG:
+			return "Perro: Canis lupus familiaris";
+		default:
+			return "Desconocido";
+		}
+	}
+	
 	public void setSpecies(PetSpecies species) {
 		this.species = species;
 	}
