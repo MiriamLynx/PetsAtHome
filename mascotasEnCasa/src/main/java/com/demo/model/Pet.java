@@ -16,6 +16,7 @@ public class Pet {
 	public Pet(String code, String name, PetState state, Date birthday, Integer visits, Owner owner, PetSpecies species) {
     	this.code = code;
     	this.name = name;
+    	this.state = state;
     	this.birthday = birthday;
     	this.visits = visits;
     	this.owner = owner;
@@ -45,6 +46,16 @@ public class Pet {
 	public PetState getState() {
 		return state;
 	}
+	public String getStateLabel() {
+		switch(state) {
+		case IN:
+			return "INGRESADO";
+		case OUT:
+			return "ALTA";
+		default:
+			return "DESCONOCIDO";
+		}
+	}
 	public void setState(PetState state) {
 		this.state = state;
 	}
@@ -61,7 +72,10 @@ public class Pet {
 		this.visits = visits;
 	}
 	public Owner getOwner() {
-		return owner;
+		return this.owner;
+	}
+	public String getOwnerName() {
+		return owner.getLastNames() + ", " + owner.getName();
 	}
 	public void setOwner(Owner owner) {
 		this.owner = owner;
